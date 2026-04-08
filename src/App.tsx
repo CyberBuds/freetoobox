@@ -6,9 +6,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 import Home from './pages/Home';
 import Tools from './pages/Tools';
 import Blog from './pages/Blog';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
 // Tool Pages
 import GSTCalculator from './pages/tools/GSTCalculator';
@@ -27,6 +32,10 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
             
             {/* Tools */}
             <Route path="/tools/gst-calculator" element={<GSTCalculator />} />
@@ -37,6 +46,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <CookieConsent />
       </div>
     </Router>
   );
