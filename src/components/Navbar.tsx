@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold text-blue-600">
               <Wrench className="h-6 w-6" />
-              <span>FreeToolsHub</span>
+              <span>FreeToolsBox</span>
             </Link>
           </div>
           

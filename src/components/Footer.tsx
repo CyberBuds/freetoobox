@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold text-blue-600 mb-4">
               <Wrench className="h-6 w-6" />
-              <span>FreeToolsHub</span>
+              <span>FreeToolsBox</span>
             </Link>
             <p className="text-gray-500 max-w-xs">
-              Your one-stop destination for free, high-quality online tools. From calculators to image utilities, we've got you covered.
+              Your one-stop destination for free, high-quality online tools. From calculators to image utilities, we've got you covered at FreeToolsBox.in.
             </p>
           </div>
           
@@ -37,7 +37,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} FreeToolsHub. All rights reserved.
+            © {new Date().getFullYear()} FreeToolsBox. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-gray-500"><Twitter className="h-5 w-5" /></a>
