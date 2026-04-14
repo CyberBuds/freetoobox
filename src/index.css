@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 10px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+
+  .docx-preview table, .mammoth-pdf-content table {
+    border-collapse: collapse;
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  .docx-preview td, .docx-preview th, .mammoth-pdf-content td, .mammoth-pdf-content th {
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.5rem !important;
+  }
+  .docx-preview p, .mammoth-pdf-content p {
+    margin-bottom: 0.5rem;
+  }
+}

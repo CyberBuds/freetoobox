@@ -1,27 +1,8 @@
+import { Link } from 'react-router-dom';
 import AdPlaceholder from '@/components/AdPlaceholder';
+import { BLOG_POSTS } from '@/constants';
 
 export default function Blog() {
-  const posts = [
-    {
-      title: "How to Optimize Your Website Images for Better Performance",
-      excerpt: "Learn the best practices for image compression and how it can significantly improve your site's loading speed and SEO ranking.",
-      date: "Oct 12, 2023",
-      category: "Optimization"
-    },
-    {
-      title: "Understanding GST: A Comprehensive Guide for Indian Businesses",
-      excerpt: "Everything you need to know about Goods and Services Tax in India, from registration to filing returns and calculating tax correctly.",
-      date: "Oct 10, 2023",
-      category: "Finance"
-    },
-    {
-      title: "Top 10 SEO Tools Every Content Creator Should Use",
-      excerpt: "Boost your search engine visibility with these essential free tools designed to help you rank higher and reach more people.",
-      date: "Oct 05, 2023",
-      category: "SEO"
-    }
-  ];
-
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-12">
@@ -31,27 +12,29 @@ export default function Blog() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-12">
-          {posts.map((post, i) => (
-            <article key={i} className="group cursor-pointer">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  {post.category}
-                </span>
-                <span className="text-sm text-gray-400">{post.date}</span>
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-4">
-                {post.title}
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center text-blue-600 font-semibold">
-                Read More
-                <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </article>
+          {BLOG_POSTS.map((post) => (
+            <Link key={post.id} to={`/blog/${post.id}`} className="group block">
+              <article>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                    {post.category}
+                  </span>
+                  <span className="text-sm text-gray-400">{post.date}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-4">
+                  {post.title}
+                </h2>
+                <p className="text-gray-500 leading-relaxed mb-6">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center text-blue-600 font-semibold group-hover:underline">
+                  Read More
+                  <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 

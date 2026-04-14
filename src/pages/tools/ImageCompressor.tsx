@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Download, Image as ImageIcon, Trash2 } from 'lucide-react';
-import AdPlaceholder from '@/components/AdPlaceholder';
+import ToolPageLayout from '@/components/ToolPageLayout';
 
 export default function ImageCompressor() {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -65,15 +65,35 @@ export default function ImageCompressor() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">Image Compressor</h1>
-        <p className="text-gray-500">Reduce image file size instantly without losing visible quality.</p>
-      </div>
+    <ToolPageLayout
+      toolId="image-compressor"
+      title="Image Compressor"
+      description="Reduce image file size instantly without losing visible quality."
+      category="Image Tools"
+      seoContent={
+        <>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Compress Your Images?</h2>
+          <p className="text-gray-600 mb-4">
+            In today's fast-paced digital world, website speed is more important than ever. Large image files are often the primary reason for slow-loading pages. By compressing your images, you can significantly reduce their file size while maintaining a high level of visual quality.
+          </p>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits of Image Compression</h3>
+          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+            <li><strong>Improved SEO:</strong> Search engines like Google consider page load speed as a ranking factor. Faster sites rank higher.</li>
+            <li><strong>Better User Experience:</strong> Users are less likely to leave a site that loads quickly.</li>
+          </ul>
 
-      <AdPlaceholder className="mb-8 h-24" />
-
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-12">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">How our Image Compressor works</h3>
+          <p className="text-gray-600 mb-4">
+            Our tool uses "Lossy Compression" for JPEG images. This technique works by removing some of the data that the human eye is less likely to notice. By adjusting the quality slider, you can find the perfect balance between file size and image clarity.
+          </p>
+          <p className="text-gray-600 mb-4">
+            <strong>Privacy First:</strong> Unlike other online tools, our compressor works entirely within your browser. Your images are never uploaded to any server. This means your private photos stay private, and the process is incredibly fast since there's no upload or download time involved.
+          </p>
+        </>
+      }
+    >
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-8">
           {!selectedImage ? (
             <div 
@@ -176,44 +196,6 @@ export default function ImageCompressor() {
           )}
         </div>
       </div>
-
-      <AdPlaceholder className="mb-12 h-32" />
-
-      <article className="prose prose-blue max-w-none bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Compress Your Images?</h2>
-        <p className="text-gray-600 mb-4">
-          In today's fast-paced digital world, website speed is more important than ever. Large image files are often the primary reason for slow-loading pages. By compressing your images, you can significantly reduce their file size while maintaining a high level of visual quality.
-        </p>
-        
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits of Image Compression</h3>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li><strong>Improved SEO:</strong> Search engines like Google consider page load speed as a ranking factor. Faster sites rank higher.</li>
-          <li><strong>Better User Experience:</strong> Users are less likely to leave a site that loads quickly.</li>
-          <li><strong>Reduced Storage Costs:</strong> Smaller files take up less space on your server or cloud storage.</li>
-          <li><strong>Lower Bandwidth Usage:</strong> Especially important for mobile users with limited data plans.</li>
-        </ul>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-2">How our Image Compressor works</h3>
-        <p className="text-gray-600 mb-4">
-          Our tool uses "Lossy Compression" for JPEG images. This technique works by removing some of the data that the human eye is less likely to notice. By adjusting the quality slider, you can find the perfect balance between file size and image clarity.
-        </p>
-        <p className="text-gray-600 mb-4">
-          <strong>Privacy First:</strong> Unlike other online tools, our compressor works entirely within your browser. Your images are never uploaded to any server. This means your private photos stay private, and the process is incredibly fast since there's no upload or download time involved.
-        </p>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Tips for best results</h3>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li>For most web uses, a quality setting of 70-80% is ideal.</li>
-          <li>If you're using images for social media, you can often go as low as 60% without noticeable loss.</li>
-          <li>Always check the "Saved" percentage to see how much space you're actually saving.</li>
-        </ul>
-
-        <p className="text-gray-600">
-          Start optimizing your digital assets today with our free, secure, and lightning-fast image compression tool.
-        </p>
-      </article>
-
-      <AdPlaceholder className="mt-12 h-24" />
-    </div>
+    </ToolPageLayout>
   );
 }

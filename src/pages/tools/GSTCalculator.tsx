@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AdPlaceholder from '@/components/AdPlaceholder';
+import ToolPageLayout from '@/components/ToolPageLayout';
 
 export default function GSTCalculator() {
   const [amount, setAmount] = useState<number>(0);
@@ -14,15 +14,47 @@ export default function GSTCalculator() {
   const netAmount = isInclusive ? amount - gstAmount : amount;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">GST Calculator (India)</h1>
-        <p className="text-gray-500">Calculate Goods and Services Tax quickly and accurately.</p>
-      </div>
+    <ToolPageLayout
+      toolId="gst-calculator"
+      title="GST Calculator (India)"
+      description="Calculate Goods and Services Tax quickly and accurately."
+      category="Calculators"
+      seoContent={
+        <>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding GST in India</h2>
+          <p className="text-gray-600 mb-4">
+            The Goods and Services Tax (GST) is an indirect tax used in India on the supply of goods and services. It is a comprehensive, multistage, destination-based tax: comprehensive because it has absorbed almost all the indirect taxes except a few state taxes. Multi-staged as it is, the GST is imposed at every step in the production process, but is meant to be refunded to all parties in the various stages of production other than the final consumer and as a destination-based tax, it is collected from point of consumption and not point of origin like previous taxes.
+          </p>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-2">How to use the GST Calculator?</h3>
+          <p className="text-gray-600 mb-4">
+            Our online GST calculator is designed to help you determine either the net or gross price of your product based on a percentage-based GST rate. It's very simple to use:
+          </p>
+          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+            <li>Enter the initial amount (cost of goods or services).</li>
+            <li>Select the applicable GST rate (5%, 12%, 18%, or 28%).</li>
+            <li>Choose whether the amount is "GST Exclusive" (tax will be added) or "GST Inclusive" (tax is already included in the price).</li>
+            <li>The calculator will instantly show you the Net Amount, GST Amount, and Total Amount.</li>
+          </ul>
 
-      <AdPlaceholder className="mb-8 h-24" />
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Why is GST Calculation Important?</h3>
+          <p className="text-gray-600 mb-4">
+            For business owners, accurate GST calculation is crucial for pricing products correctly and ensuring compliance with tax regulations. It helps in:
+          </p>
+          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+            <li><strong>Accurate Invoicing:</strong> Ensure your customers are charged the correct tax amount.</li>
+            <li><strong>Profit Margin Analysis:</strong> Understand your true costs after removing the tax component.</li>
+            <li><strong>Tax Filing:</strong> Simplify the process of calculating your total tax liability for monthly or quarterly filings.</li>
+            <li><strong>Transparency:</strong> Provide clear breakdowns to your clients about the tax they are paying.</li>
+          </ul>
 
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-12">
+          <p className="text-gray-600">
+            Whether you are a small business owner, a freelancer, or a consumer wanting to verify a bill, our GST calculator provides a quick and reliable way to handle tax calculations on the go.
+          </p>
+        </>
+      }
+    >
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div>
@@ -83,44 +115,6 @@ export default function GSTCalculator() {
           </div>
         </div>
       </div>
-
-      <AdPlaceholder className="mb-12 h-32" />
-
-      {/* SEO Content */}
-      <article className="prose prose-blue max-w-none bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding GST in India</h2>
-        <p className="text-gray-600 mb-4">
-          The Goods and Services Tax (GST) is an indirect tax used in India on the supply of goods and services. It is a comprehensive, multistage, destination-based tax: comprehensive because it has absorbed almost all the indirect taxes except a few state taxes. Multi-staged as it is, the GST is imposed at every step in the production process, but is meant to be refunded to all parties in the various stages of production other than the final consumer and as a destination-based tax, it is collected from point of consumption and not point of origin like previous taxes.
-        </p>
-        
-        <h3 className="text-xl font-bold text-gray-900 mb-2">How to use the GST Calculator?</h3>
-        <p className="text-gray-600 mb-4">
-          Our online GST calculator is designed to help you determine either the net or gross price of your product based on a percentage-based GST rate. It's very simple to use:
-        </p>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li>Enter the initial amount (cost of goods or services).</li>
-          <li>Select the applicable GST rate (5%, 12%, 18%, or 28%).</li>
-          <li>Choose whether the amount is "GST Exclusive" (tax will be added) or "GST Inclusive" (tax is already included in the price).</li>
-          <li>The calculator will instantly show you the Net Amount, GST Amount, and Total Amount.</li>
-        </ul>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Why is GST Calculation Important?</h3>
-        <p className="text-gray-600 mb-4">
-          For business owners, accurate GST calculation is crucial for pricing products correctly and ensuring compliance with tax regulations. It helps in:
-        </p>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li><strong>Accurate Invoicing:</strong> Ensure your customers are charged the correct tax amount.</li>
-          <li><strong>Profit Margin Analysis:</strong> Understand your true costs after removing the tax component.</li>
-          <li><strong>Tax Filing:</strong> Simplify the process of calculating your total tax liability for monthly or quarterly filings.</li>
-          <li><strong>Transparency:</strong> Provide clear breakdowns to your clients about the tax they are paying.</li>
-        </ul>
-
-        <p className="text-gray-600">
-          Whether you are a small business owner, a freelancer, or a consumer wanting to verify a bill, our GST calculator provides a quick and reliable way to handle tax calculations on the go.
-        </p>
-      </article>
-
-      <AdPlaceholder className="mt-12 h-24" />
-    </div>
+    </ToolPageLayout>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Copy, Trash2, Check } from 'lucide-react';
-import AdPlaceholder from '@/components/AdPlaceholder';
+import ToolPageLayout from '@/components/ToolPageLayout';
 
 export default function WordCounter() {
   const [text, setText] = useState('');
@@ -20,15 +20,37 @@ export default function WordCounter() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">Word Counter</h1>
-        <p className="text-gray-500">Analyze your text for word count, character count, and more.</p>
-      </div>
+    <ToolPageLayout
+      toolId="word-counter"
+      title="Word Counter"
+      description="Analyze your text for word count, character count, and more."
+      category="SEO Tools"
+      seoContent={
+        <>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Why use a Word Counter?</h2>
+          <p className="text-gray-600 mb-4">
+            Whether you are a student writing an essay, a blogger crafting a post, or a professional preparing a report, keeping track of your word count is essential. Many platforms have strict character or word limits that you must adhere to.
+          </p>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Key Features of our Tool</h3>
+          <p className="text-gray-600 mb-4">
+            Our online word counter goes beyond just counting words. It provides a comprehensive analysis of your text:
+          </p>
+          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
+            <li><strong>Word Count:</strong> The total number of words in your text.</li>
+            <li><strong>Character Count:</strong> Total characters, including spaces and punctuation.</li>
+            <li><strong>Sentence & Paragraph Count:</strong> Helps you understand the structure and flow of your writing.</li>
+            <li><strong>Estimated Reading Time:</strong> Based on an average reading speed of 200 words per minute.</li>
+          </ul>
 
-      <AdPlaceholder className="mb-8 h-24" />
-
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden mb-12">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">SEO and Word Count</h3>
+          <p className="text-gray-600 mb-4">
+            In the world of SEO (Search Engine Optimization), word count plays a significant role. While there is no "perfect" length, search engines tend to favor comprehensive content that thoroughly covers a topic.
+          </p>
+        </>
+      }
+    >
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-8 space-y-6">
           <div className="relative">
             <textarea
@@ -83,49 +105,6 @@ export default function WordCounter() {
           </div>
         </div>
       </div>
-
-      <AdPlaceholder className="mb-12 h-32" />
-
-      <article className="prose prose-blue max-w-none bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Why use a Word Counter?</h2>
-        <p className="text-gray-600 mb-4">
-          Whether you are a student writing an essay, a blogger crafting a post, or a professional preparing a report, keeping track of your word count is essential. Many platforms have strict character or word limits that you must adhere to.
-        </p>
-        
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Key Features of our Tool</h3>
-        <p className="text-gray-600 mb-4">
-          Our online word counter goes beyond just counting words. It provides a comprehensive analysis of your text:
-        </p>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li><strong>Word Count:</strong> The total number of words in your text.</li>
-          <li><strong>Character Count:</strong> Total characters, including spaces and punctuation.</li>
-          <li><strong>Character Count (No Spaces):</strong> Useful for platforms that only count visible characters.</li>
-          <li><strong>Sentence & Paragraph Count:</strong> Helps you understand the structure and flow of your writing.</li>
-          <li><strong>Estimated Reading Time:</strong> Based on an average reading speed of 200 words per minute.</li>
-        </ul>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-2">SEO and Word Count</h3>
-        <p className="text-gray-600 mb-4">
-          In the world of SEO (Search Engine Optimization), word count plays a significant role. While there is no "perfect" length, search engines tend to favor comprehensive content that thoroughly covers a topic. Long-form content (typically over 1,000 words) often ranks better for competitive keywords. Our tool helps you ensure your content meets your target length.
-        </p>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Writing for Social Media</h3>
-        <p className="text-gray-600 mb-4">
-          Social media platforms have strict character limits:
-        </p>
-        <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-          <li><strong>Twitter:</strong> 280 characters.</li>
-          <li><strong>Instagram Captions:</strong> 2,200 characters.</li>
-          <li><strong>LinkedIn Posts:</strong> 3,000 characters.</li>
-          <li><strong>Meta Descriptions:</strong> Ideally between 150-160 characters for best display in search results.</li>
-        </ul>
-
-        <p className="text-gray-600">
-          Our word counter is free, fast, and works entirely in your browser. No data is ever sent to our servers, ensuring your writing remains private and secure.
-        </p>
-      </article>
-
-      <AdPlaceholder className="mt-12 h-24" />
-    </div>
+    </ToolPageLayout>
   );
 }
