@@ -139,6 +139,246 @@ export const TOOL_METADATA: Record<string, { faqs: FAQ[] }> = {
         answer: "Compounding is when you earn returns on your previous returns. Over 10-20 years, the 'wealth gained' component often becomes significantly larger than your total 'invested amount'."
       }
     ]
+  },
+  'character-counter': {
+    faqs: [
+      {
+        question: "Why do I need a character counter?",
+        answer: "Many platforms have strict character limits for titles, meta descriptions, and social media posts. Our tool helps you stay within those limits to avoid truncation."
+      },
+      {
+        question: "Does it count spaces as characters?",
+        answer: "Yes, our counter includes spaces and special characters, as most platform limits (like Twitter or Google Meta) are based on the total string length including spaces."
+      }
+    ]
+  },
+  'case-converter': {
+    faqs: [
+      {
+        question: "What is CamelCase and when should I use it?",
+        answer: "In camelCase, the first letter is lowercase and each subsequent word starts with an uppercase letter (e.g., myVariableName). It is commonly used in programming languages like JavaScript and Java."
+      },
+      {
+        question: "Can I convert text back from Title Case?",
+        answer: "Yes, you can paste text in any case and instantly transform it into lowercase, uppercase, or sentence case with one click."
+      }
+    ]
+  },
+  'password-generator': {
+    faqs: [
+      {
+        question: "What makes a password 'Strong'?",
+        answer: "A strong password is at least 12 characters long and uses a mix of uppercase letters, lowercase letters, numbers, and symbols. Unpredictability is the key to security."
+      },
+      {
+        question: "Is it safe to generate passwords online?",
+        answer: "Our tool generates passwords entirely in your browser using local JavaScript. Your new password is never transmitted over the internet to our servers."
+      }
+    ]
+  },
+  'income-tax-calculator': {
+    faqs: [
+      {
+        question: "Which tax regime is better for me?",
+        answer: "It depends on your deductions. If you have high investments in 80C, HRA, and home loans, the Old Regime might save more. For those with few deductions, the New Regime's lower rates are usually better."
+      },
+      {
+        question: "What is the standard deduction for FY 2024-25?",
+        answer: "The standard deduction has been increased to ₹75,000 for salaried employees and pensioners under both the New and Old tax regimes in the latest budget."
+      }
+    ]
+  },
+  'hra-calculator': {
+    faqs: [
+      {
+        question: "Can I claim HRA if I live in my own house?",
+        answer: "No, HRA exemption is only applicable if you are living in a rented house and actually paying rent to a landlord."
+      },
+      {
+        question: "Is HRA exemption part of the New Tax Regime?",
+        answer: "No, HRA exemption is only available under the Old Tax Regime. The New Regime does not allow for HRA deductions."
+      }
+    ]
+  },
+  'epf-calculator': {
+    faqs: [
+      {
+        question: "What is the current interest rate for EPF?",
+        answer: "The EPFO has recommended an interest rate of 8.25% for the financial year 2023-24, which is one of the highest among comparable debt instruments."
+      },
+      {
+        question: "When can I withdraw my full EPF amount?",
+        answer: "You can withdraw the full amount upon retirement after 58 years of age or if you are unemployed for more than two months."
+      }
+    ]
+  },
+  'meta-tag-generator': {
+    faqs: [
+      {
+        question: "What are OG tags?",
+        answer: "Open Graph (OG) tags are meta tags that control how a URL is displayed when shared on social media platforms like Facebook, LinkedIn, and Twitter."
+      },
+      {
+        question: "How long should a meta description be?",
+        answer: "For optimal display in Google search results, keep your meta descriptions between 150-160 characters. Descriptions longer than this are often truncated."
+      }
+    ]
+  },
+  'robots-txt-generator': {
+    faqs: [
+      {
+        question: "Where should I place the robots.txt file?",
+        answer: "The robots.txt file must be placed in the root directory of your website (e.g., domain.com/robots.txt). It will not work if placed in a subdirectory."
+      },
+      {
+        question: "Can robots.txt hide my pages from users?",
+        answer: "No, robots.txt only stops bots from crawling. It does not prevent manual access by users. To hide content from users, you need password protection."
+      }
+    ]
+  },
+  'sitemap-generator': {
+    faqs: [
+      {
+        question: "Why do I need a sitemap?",
+        answer: "A sitemap helps search engine crawlers find all the pages on your site, even those that might not be internally linked, ensuring better indexing."
+      },
+      {
+        question: "How many URLs can a single sitemap hold?",
+        answer: "A single sitemap file can contain up to 50,000 URLs and must not exceed 50MB in size. For larger sites, you can use a sitemap index file."
+      }
+    ]
+  },
+  'qr-code-generator': {
+    faqs: [
+      {
+        question: "Do these QR codes expire?",
+        answer: "No, the QR codes generated are 'Static', meaning the information is encoded directly into the pattern. They will work forever as long as the content (like your URL) is active."
+      },
+      {
+        question: "What is the best color for a QR code?",
+        answer: "Black on a white background is the most reliable. Always ensure high contrast. If using colors, keep the foreground dark and the background light."
+      }
+    ]
+  },
+  'area-converter': {
+    faqs: [
+      {
+        question: "How many square feet are in an acre?",
+        answer: "There are exactly 43,560 square feet in one acre. This is a common standard in real estate and land measurement."
+      },
+      {
+        question: "What is a hectare?",
+        answer: "A hectare is a metric unit of area equal to 10,000 square meters, primarily used for measuring large plots of land and agricultural fields."
+      }
+    ]
+  },
+  'currency-converter': {
+    faqs: [
+      {
+        question: "How often are the rates updated?",
+        answer: "Our tool uses periodically updated representative exchange rates for estimation. For critical financial transactions, always check with your bank for live interbank rates."
+      },
+      {
+        question: "Is there a conversion fee?",
+        answer: "FreeToolsBox does not charge any fees. However, when you actually exchange money, banks and bureaus usually include a 1-5% markup on the rate."
+      }
+    ]
+  },
+  'land-unit-converter': {
+    faqs: [
+      {
+        question: "How much is 1 Bigha in square meters?",
+        answer: "The size of a Bigha varies by state in India. In Uttar Pradesh and parts of North India, it is commonly standardized at 2,529.3 square meters."
+      },
+      {
+        question: "What is a Guntha?",
+        answer: "Guntha is a traditional land measurement unit used in West and South India (Maharashtra, Karnataka, Gujarat). 1 Guntha is equal to 1,089 square feet."
+      }
+    ]
+  },
+  'petrol-cost-calculator': {
+    faqs: [
+      {
+        question: "How can I improve my car's mileage?",
+        answer: "Maintain proper tire pressure, avoid sudden braking/acceleration, and keep your vehicle serviced regularly to ensure optimal fuel efficiency."
+      },
+      {
+        question: "How is the fuel needed calculated?",
+        answer: "Fuel Needed = Distance / Mileage. For example, if you travel 500km with a mileage of 20km/l, you will need 25 liters of fuel."
+      }
+    ]
+  },
+  'text-to-slug': {
+    faqs: [
+      {
+        question: "Why are slugs important for SEO?",
+        answer: "A clean, descriptive slug helps search engines understand the topic of the page and improves the user experience by making URLs easy to read and share."
+      },
+      {
+        question: "Should I include 'stop words' in my slug?",
+        answer: "Generally, no. Removing stop words like 'a', 'the', 'is', and 'and' makes your URL shorter and more focused on the primary keywords."
+      }
+    ]
+  },
+  'json-formatter': {
+    faqs: [
+      {
+        question: "Is it safe to paste private JSON here?",
+        answer: "Yes, our formatter runs strictly client-side. Your JSON data never leaves your browser, ensuring your API results or config data stays private."
+      },
+      {
+        question: "Can it fix invalid JSON?",
+        answer: "Our tool highlights syntax errors to help you fix them manually. It follows strict JSON standards (e.g., double quotes for keys)."
+      }
+    ]
+  },
+  'html-minifier': {
+    faqs: [
+      {
+        question: "Does minification break my website?",
+        answer: "Standard minification only removes safe whitespace and comments. However, always test your site after minification to ensure no preformatted text (like within <pre> tags) is affected."
+      },
+      {
+        question: "What characters are removed?",
+        answer: "It removes multiple spaces, tabs, newlines, and HTML comments, which are not needed by the browser to render your page correctly."
+      }
+    ]
+  },
+  'css-minifier': {
+    faqs: [
+      {
+        question: "How much speed gain can I expect?",
+        answer: "Minifying CSS can reduce file size by 15-30%. For sites with large stylesheets, this can significantly improve the First Contentful Paint (FCP) time."
+      },
+      {
+        question: "Should I minify my CSS every time?",
+        answer: "It is a best practice to automate minification as part of your deployment process. For small edits, using an online tool like ours is efficient."
+      }
+    ]
+  },
+  'base64-tool': {
+    faqs: [
+      {
+        question: "Is Base64 a form of encryption?",
+        answer: "No, Base64 is an encoding format, not encryption. It can be easily decoded by anyone and should not be used to hide sensitive credentials."
+      },
+      {
+        question: "Can I encode images into Base64?",
+        answer: "Yes, Base64 is frequently used to embed small images directly into CSS or HTML to reduce the number of HTTP requests made by the browser."
+      }
+    ]
+  },
+  'gratuity-calculator': {
+    faqs: [
+      {
+        question: "What is the 5-year rule for gratuity?",
+        answer: "Under the Payment of Gratuity Act, an employee is typically eligible for gratuity only after completing 5 years of continuous service with the same employer."
+      },
+      {
+        question: "Is gratuity taxable in India?",
+        answer: "Gratuity received by government employees is fully tax-exempt. For private employees, it is exempt up to a lifetime limit of ₹20 Lakh."
+      }
+    ]
   }
 };
 

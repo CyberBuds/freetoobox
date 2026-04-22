@@ -41,6 +41,27 @@ import JPGToPDF from './pages/tools/JPGToPDF';
 import ImageResizer from './pages/tools/ImageResizer';
 import JPGToPNG from './pages/tools/JPGToPNG';
 import PNGToJPG from './pages/tools/PNGToJPG';
+import CharacterCounter from './pages/tools/CharacterCounter';
+import CaseConverter from './pages/tools/CaseConverter';
+import PasswordGenerator from './pages/tools/PasswordGenerator';
+import PetrolCostCalculator from './pages/tools/PetrolCostCalculator';
+import TextToSlug from './pages/tools/TextToSlug';
+import IncomeTaxCalculator from './pages/tools/IncomeTaxCalculator';
+import HRACalculator from './pages/tools/HRACalculator';
+import GratuityCalculator from './pages/tools/GratuityCalculator';
+import EPFCalculator from './pages/tools/EPFCalculator';
+import JSONFormatter from './pages/tools/JSONFormatter';
+import Base64Tool from './pages/tools/Base64Tool';
+import HTMLMinifier from './pages/tools/HTMLMinifier';
+import CSSMinifier from './pages/tools/CSSMinifier';
+import MetaTagGenerator from './pages/tools/MetaTagGenerator';
+import RobotsTxtGenerator from './pages/tools/RobotsTxtGenerator';
+import SitemapGenerator from './pages/tools/SitemapGenerator';
+import KeywordDensityChecker from './pages/tools/KeywordDensityChecker';
+import QRCodeGenerator from './pages/tools/QRCodeGenerator';
+import AreaConverter from './pages/tools/AreaConverter';
+import LandUnitConverter from './pages/tools/LandUnitConverter';
+import CurrencyConverter from './pages/tools/CurrencyConverter';
 
 export default function App() {
   return (
@@ -82,6 +103,27 @@ export default function App() {
             <Route path="/tools/image-resizer" element={<ImageResizer />} />
             <Route path="/tools/jpg-to-png" element={<JPGToPNG />} />
             <Route path="/tools/png-to-jpg" element={<PNGToJPG />} />
+            <Route path="/tools/character-counter" element={<CharacterCounter />} />
+            <Route path="/tools/case-converter" element={<CaseConverter />} />
+            <Route path="/tools/password-generator" element={<PasswordGenerator />} />
+            <Route path="/tools/petrol-cost-calculator" element={<PetrolCostCalculator />} />
+            <Route path="/tools/text-to-slug" element={<TextToSlug />} />
+            <Route path="/tools/income-tax-calculator" element={<IncomeTaxCalculator />} />
+            <Route path="/tools/hra-calculator" element={<HRACalculator />} />
+            <Route path="/tools/gratuity-calculator" element={<GratuityCalculator />} />
+            <Route path="/tools/epf-calculator" element={<EPFCalculator />} />
+            <Route path="/tools/json-formatter" element={<JSONFormatter />} />
+            <Route path="/tools/base64-tool" element={<Base64Tool />} />
+            <Route path="/tools/html-minifier" element={<HTMLMinifier />} />
+            <Route path="/tools/css-minifier" element={<CSSMinifier />} />
+            <Route path="/tools/meta-tag-generator" element={<MetaTagGenerator />} />
+            <Route path="/tools/robots-txt-generator" element={<RobotsTxtGenerator />} />
+            <Route path="/tools/sitemap-generator" element={<SitemapGenerator />} />
+            <Route path="/tools/keyword-density-checker" element={<KeywordDensityChecker />} />
+            <Route path="/tools/qr-code-generator" element={<QRCodeGenerator />} />
+            <Route path="/tools/area-converter" element={<AreaConverter />} />
+            <Route path="/tools/land-unit-converter" element={<LandUnitConverter />} />
+            <Route path="/tools/currency-converter" element={<CurrencyConverter />} />
           </Routes>
         </main>
         <Footer />
