@@ -17,45 +17,67 @@ export default function EMICalculator() {
     <ToolPageLayout
       toolId="emi-calculator"
       title="EMI Calculator"
-      description="Plan your loans better with our easy-to-use EMI calculator."
+      description="Plan your home, car, or personal loans better with our easy-to-use EMI calculator."
       category="Calculators"
       seoContent={
-        <>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What is an EMI?</h2>
-          <p className="text-gray-600 mb-4">
-            EMI stands for Equated Monthly Installment. It is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. Equated monthly installments are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full.
-          </p>
-          
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Components of an EMI</h3>
-          <p className="text-gray-600 mb-4">
-            An EMI consists of two main parts:
-          </p>
-          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-            <li><strong>Principal Amount:</strong> This is the actual amount you borrowed from the bank or financial institution.</li>
-            <li><strong>Interest Component:</strong> This is the cost of borrowing the money, calculated based on the interest rate provided by the lender.</li>
-          </ul>
+        <div className="space-y-8">
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Mastering Your Finances with an EMI Calculator</h2>
+            <p className="text-gray-600 mb-4">
+              An <strong>Equated Monthly Installment (EMI)</strong> is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both interest and principal each month so that over a specified number of years, the loan is paid off in full.
+            </p>
+            <p className="text-gray-600">
+              Whether you are taking a home loan to buy your dream house, a car loan for a new vehicle, or a personal loan for a wedding or medical emergency, understanding your monthly outflow is the first step toward responsible debt management.
+            </p>
+          </section>
 
-          <h3 className="text-xl font-bold text-gray-900 mb-2">How to use the EMI Calculator?</h3>
-          <p className="text-gray-600 mb-4">
-            Our EMI calculator is a handy tool that helps you calculate the monthly amount you will need to pay for your loan. To use it:
-          </p>
-          <ol className="list-decimal pl-6 text-gray-600 mb-6 space-y-2">
-            <li>Adjust the <strong>Loan Amount</strong> slider to the amount you wish to borrow.</li>
-            <li>Set the <strong>Interest Rate</strong> offered by your bank.</li>
-            <li>Choose the <strong>Loan Tenure</strong> (the number of years you want to take to repay the loan).</li>
-            <li>The calculator will instantly show your monthly EMI, total interest payable, and the total amount you will pay back.</li>
-          </ol>
+          <section className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+            <h3 className="text-xl font-bold text-blue-900 mb-3">The EMI Mathematical Formula</h3>
+            <p className="text-blue-800 mb-4">Most banks and financial institutions use the 'Reducing Balance' method. The formula is:</p>
+            <div className="bg-white p-4 rounded-lg border border-blue-200 text-blue-700 font-mono text-center overflow-x-auto">
+              EMI = [P x R x (1+R)^N] / [(1+R)^N-1]
+            </div>
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-blue-800">
+              <li><strong>P:</strong> Principal Loan Amount</li>
+              <li><strong>R:</strong> Monthly Interest Rate (Annual Rate / 12 / 100)</li>
+              <li><strong>N:</strong> Number of Monthly Installments</li>
+            </ul>
+          </section>
 
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits of using an EMI Calculator</h3>
-          <p className="text-gray-600 mb-4">
-            Using an EMI calculator before taking a loan is highly recommended for several reasons:
-          </p>
-          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-            <li><strong>Financial Planning:</strong> It helps you understand if you can afford the monthly payments within your current budget.</li>
-            <li><strong>Comparison:</strong> You can easily compare different loan offers by changing the interest rates and tenures.</li>
-            <li><strong>No Manual Errors:</strong> Manual calculations can be complex and prone to errors. Our tool ensures 100% accuracy.</li>
-          </ul>
-        </>
+          <section>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Factors That Influence Your EMI</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <h4 className="font-bold text-blue-600 mb-1">Principal Amount</h4>
+                <p className="text-xs text-gray-500">The core amount you borrow. A higher principal directly leads to a higher monthly EMI.</p>
+              </div>
+              <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <h4 className="font-bold text-blue-600 mb-1">Interest Rate</h4>
+                <p className="text-xs text-gray-500">The percentage charged by the lender. Even a 0.5% difference can save you thousands over time.</p>
+              </div>
+              <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <h4 className="font-bold text-blue-600 mb-1">Loan Tenure</h4>
+                <p className="text-xs text-gray-500">The duration of the loan. Longer tenures reduce EMI but increase the total interest paid.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Top 3 Tips for Reducing Loan Costs</h3>
+            <ul className="list-disc pl-6 text-gray-600 space-y-3">
+              <li><strong>Make Partial Pre-payments:</strong> Even a small annual pre-payment toward your principal can significantly reduce your tenure and total interest.</li>
+              <li><strong>Choose Shorter Tenures if Possible:</strong> While a 30-year home loan has lower EMIs, a 15-year loan will save you a massive amount in interest.</li>
+              <li><strong>Shop Around for Rates:</strong> Always compare the Effective Interest Rate (including processing fees) across different banks using our calculator.</li>
+            </ul>
+          </section>
+
+          <section className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Why FreeToolsBox.in?</h3>
+            <p className="text-gray-600">
+              Our EMI calculator is designed for speed and clarity. We provide a visual breakdown of your principal vs. interest components, helping you visualize your debt repayment journey. And as always, your financial data stays private and local to your device.
+            </p>
+          </section>
+        </div>
       }
     >
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">

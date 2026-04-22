@@ -7,96 +7,136 @@ export const TOOL_METADATA: Record<string, { faqs: FAQ[] }> = {
   'gst-calculator': {
     faqs: [
       {
-        question: "What is GST?",
-        answer: "GST stands for Goods and Services Tax. It's an indirect tax used in India on the supply of goods and services."
+        question: "What exactly is GST in the Indian context?",
+        answer: "Goods and Services Tax (GST) is a comprehensive indirect tax destination-based tax that replaced various indirect taxes in India such as VAT, service tax, and excise duty. It was implemented on July 1, 2017, to create a 'One Nation, One Tax' system."
       },
       {
-        question: "How is GST calculated?",
-        answer: "GST is calculated by multiplying the original price by the GST rate (e.g., 5%, 12%, 18%, or 28%) and then adding that amount to the original price."
+        question: "What are the different GST slabs in India?",
+        answer: "The Indian government has categorized goods and services into four primary tax slabs: 5%, 12%, 18%, and 28%. Some essential items like unbranded food grains are exempted (0%), while certain luxury items attract an additional cess."
       },
       {
-        question: "Is this GST calculator free to use?",
-        answer: "Yes, our GST calculator is completely free and works entirely in your browser."
+        question: "How do I calculate GST Inclusive vs. Exclusive?",
+        answer: "For Exclusive: GST Amount = (Original Price * GST Rate) / 100. For Inclusive: GST Amount = Price - (Price * (100 / (100 + GST Rate))). Our calculator handles both methods instantly."
+      },
+      {
+        question: "What is the difference between CGST, SGST, and IGST?",
+        answer: "CGST and SGST are collected for intra-state transactions (within the same state) and are shared between Central and State governments. IGST is collected for inter-state transactions and is collected by the Center."
+      },
+      {
+        question: "Who needs to register for GST?",
+        answer: "Generally, businesses with an annual turnover exceeding ₹40 lakhs (₹20 lakhs for services) are required to register. However, requirements can vary based on the state and nature of the business."
+      },
+      {
+        question: "Is this GST calculator useful for filing returns?",
+        answer: "Yes, it helps you verify the tax components on your invoices, which is the first step toward accurate GSTR-1 and GSTR-3B filings."
       }
     ]
   },
   'emi-calculator': {
     faqs: [
       {
-        question: "What is an EMI?",
-        answer: "EMI stands for Equated Monthly Installment. It is a fixed payment amount made by a borrower to a lender at a specified date each calendar month."
+        question: "What does EMI stand for?",
+        answer: "EMI stands for Equated Monthly Installment. It is the fixed amount you pay back to a lender every month until your loan is fully repaid."
       },
       {
-        question: "How does the EMI calculator work?",
-        answer: "It uses the principal amount, interest rate, and loan tenure to calculate the monthly payment using the standard reducing balance formula."
+        question: "How is the monthly interest calculated in an EMI?",
+        answer: "Most banks use the 'Reducing Balance Method,' where interest is calculated on the outstanding principal at the end of each month. As you pay off more of the principal, the interest component decreases."
+      },
+      {
+        question: "What factors affect my EMI amount?",
+        answer: "Three main factors: the Loan Amount (Principal), the Interest Rate (Annual), and the Loan Tenure (Duration). Increasing the tenure reduces the EMI but increases the total interest paid."
+      },
+      {
+        question: "Can I use this for Home Loans and Car Loans?",
+        answer: "Absolutely. The mathematical formula for EMI remains the same whether it's a personal loan, home loan, or car loan."
+      },
+      {
+        question: "How does a moratorium affect my EMI?",
+        answer: "A moratorium is a temporary holiday from payments. However, interest usually continues to accrue during this period, which might lead to an increased EMI or longer tenure later."
       }
     ]
   },
   'image-compressor': {
     faqs: [
       {
-        question: "Will I lose quality when compressing images?",
-        answer: "Our tool uses smart compression algorithms to reduce file size while maintaining as much visual quality as possible."
+        question: "How does image compression work without losing quality?",
+        answer: "We use 'Lossy' and 'Lossless' techniques. Our tool intelligently identifies and removes metadata and subtle color variations that the human eye cannot see, drastically reducing file size while keeping the image looking sharp."
       },
       {
-        question: "Are my images uploaded to a server?",
-        answer: "No, all image processing happens locally in your browser. Your privacy is our priority."
+        question: "Does compression affect my website's SEO?",
+        answer: "Yes, positively! Faster-loading images lead to faster page speeds, which is a significant ranking factor for Google Search and improves Core Web Vitals (LCP)."
+      },
+      {
+        question: "What is the maximum file size I can upload?",
+        answer: "Currently, we support images up to 20MB. Since processing happens in your browser, the limit depends partly on your device's memory."
+      },
+      {
+        question: "Will my images be stored on your servers?",
+        answer: "Never. We value your privacy. The 'FreeToolsBox' philosophy is client-side only. Your images stay on your computer or phone throughout the entire process."
       }
     ]
   },
   'pdf-to-word': {
     faqs: [
       {
-        question: "Can I edit the Word document after conversion?",
-        answer: "Yes, the resulting .docx file is fully editable in Microsoft Word, Google Docs, or any other word processor."
+        question: "How accurate is the PDF to Word conversion?",
+        answer: "Our converter identifies text structures, tables, and layouts to recreate them in Word. It works best with 'Digital' PDFs (files created from documents). Scanned PDFs are currently not supported in this version."
       },
       {
-        question: "Does it support scanned PDFs?",
-        answer: "This tool extracts text data. Scanned PDFs (which are essentially images) require OCR technology which is not currently supported."
+        question: "Is there a limit on the number of pages?",
+        answer: "You can convert documents up to 50 pages for free. For larger files, we recommend splitting the PDF and converting sections."
+      },
+      {
+        question: "Can I convert protected or encrypted PDFs?",
+        answer: "For security reasons, we do not support the conversion of password-protected files. You must unlock the PDF before uploading."
       }
     ]
   },
   'age-calculator': {
     faqs: [
       {
-        question: "How accurate is the age calculation?",
-        answer: "Our calculator is 100% accurate as it accounts for leap years and the specific number of days in each month."
+        question: "How does the calculator handle leap years?",
+        answer: "Our algorithm accurately calculates the extra day in February for leap years, ensuring your age is correct down to the exact day."
       },
       {
-        question: "Can I calculate the age of someone born in a leap year?",
-        answer: "Yes, the tool correctly handles February 29th birthdates and leap year intervals."
+        question: "Can I calculate the age difference between two people?",
+        answer: "Yes, simply enter the two birthdates and the tool will show you the exact gap in years, months, and days."
+      },
+      {
+        question: "Why is my age occasionally different on different calculators?",
+        answer: "Some simple calculators use 365 days for every year. Ours calculates based on the actual calendar days, which is the most precise method used universally."
       }
     ]
   },
-  'image-resizer': {
+  'bmi-calculator': {
     faqs: [
       {
-        question: "Will resizing my image reduce its quality?",
-        answer: "Upscaling an image (making it larger) may result in some pixelation, but downscaling (making it smaller) usually maintains excellent clarity."
+        question: "What is a 'Healthy' BMI range?",
+        answer: "For adults, a healthy BMI typically falls between 18.5 and 24.9. Below 18.5 is considered underweight, while 25 and above is considered overweight."
       },
       {
-        question: "Can I maintain the aspect ratio?",
-        answer: "Yes, our tool has an 'Aspect Ratio' lock feature to ensure your images don't look stretched or squashed."
+        question: "Is BMI an accurate measure of health?",
+        answer: "BMI is a useful screening tool but has limitations. It doesn't account for muscle mass vs. fat mass. For example, athletes may have a high BMI despite having low body fat."
+      },
+      {
+        question: "Does BMI vary for children and teens?",
+        answer: "Yes. While the formula is the same, children and teens are assessed using BMI-for-age percentiles because their body composition changes as they grow."
       }
     ]
   },
-  'jpg-to-png': {
+  'sip-calculator': {
     faqs: [
       {
-        question: "What is the difference between JPG and PNG?",
-        answer: "JPG is best for photographs and uses lossy compression. PNG is better for graphics with fewer colors and supports transparency."
+        question: "What is the primary benefit of SIP?",
+        answer: "The primary benefit is Rupee Cost Averaging. By investing a fixed amount regularly, you buy more units when prices are low and fewer units when prices are high, lowering your average cost over time."
       },
       {
-        question: "Will the background become transparent?",
-        answer: "Converting JPG to PNG won't automatically make the background transparent, but it allows you to add transparency later using an editor."
-      }
-    ]
-  },
-  'percentage-calculator': {
-    faqs: [
+        question: "Is the interest rate in SIP guaranteed?",
+        answer: "No, SIP returns in mutual funds are subject to market risks. Our calculator uses 'expected returns' to help you model potential growth based on historical data."
+      },
       {
-        question: "What types of percentage calculations can I do?",
-        answer: "You can calculate basic percentages, percentage increases, decreases, and what percentage one number is of another."
+        question: "How does compounding work in a long-term SIP?",
+        answer: "Compounding is when you earn returns on your previous returns. Over 10-20 years, the 'wealth gained' component often becomes significantly larger than your total 'invested amount'."
       }
     ]
   }

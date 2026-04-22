@@ -340,5 +340,53 @@ export const BLOG_POSTS = [
     date: "Dec 05, 2023",
     category: "Productivity",
     author: "Admin"
+  },
+  {
+    id: 'loan-tenure-optimization',
+    title: "Understanding Loan Tenure: How Shorter Loans Save Thousands",
+    excerpt: "Explore the impact of loan duration on your total interest and learn why 'shorter is better' when it comes to long-term debt.",
+    content: `
+      <p>When taking a loan, most borrowers focus solely on the monthly EMI. While a lower EMI is easier on the wallet today, it often comes at a massive cost in the long run due to extended tenures.</p>
+      <h3>The Tenure Trap</h3>
+      <p>A 30-year home loan might have an EMI that's 20% lower than a 15-year loan, but you will end up paying nearly triple the interest. This 'Interest Multiplication' is how banks earn their primary profit.</p>
+      <h3>Strategic Repayment</h3>
+      <p>Use an <a href="/tools/loan-calculator">EMI Calculator</a> to find your 'Sweet Spot'—the shortest tenure you can afford without straining your monthly lifestyle. Even reducing a 20-year loan to 17 years can save you several lakhs in interest.</p>
+    `,
+    date: "Jan 10, 2024",
+    category: "Finance",
+    author: "Admin"
+  },
+  {
+    id: 'the-science-of-age-calculation',
+    title: "The Science of Age Calculation: More than Just Years",
+    excerpt: "Discover the complexity behind leap years, cultural age differences, and how our high-precision tools calculate your exact time on Earth.",
+    content: `
+      <p>Calculating age seems simple until you account for the irregularities of the Gregorian calendar. Leap years happen every four years (mostly), and months vary from 28 to 31 days.</p>
+      <h3>Leap Year Logic</h3>
+      <p>Did you know that years divisible by 100 are NOT leap years unless they are also divisible by 400? This precision is critical for legal and medical age documentation.</p>
+      <h3>Exact Time Projections</h3>
+      <p>Our <a href="/tools/age-calculator">Age Calculator</a> uses high-precision algorithms to track every day of your life, accounting for all calendar shifts. Knowing your age in days or even hours can be a fun way to celebrate milestones!</p>
+    `,
+    date: "Jan 15, 2024",
+    category: "Knowledge",
+    author: "Admin"
+  },
+  {
+    id: 'image-seo-best-practices',
+    title: "Image SEO: Boosting Your Ranking with Optimized Media",
+    excerpt: "Metadata, Alt text, and Compression—learn the three pillars of maximizing your website's search engine visibility through images.",
+    content: `
+      <p>Google images can drive significant traffic to your site, but only if your media is optimized for their crawlers. SEO isn't just about text; it's about how your images talk to search engines.</p>
+      <h3>The Three Pillars of Image SEO</h3>
+      <ul>
+        <li><strong>Descriptive Filenames:</strong> Rename 'IMG_5432.jpg' to 'blue-vintage-car.jpg' before uploading.</li>
+        <li><strong>Alt Text:</strong> Always provide a clear, descriptive alternative text for accessibility and indexation.</li>
+        <li><strong>File Size:</strong> Large files slow down your page, hurting your 'Mobile-First' index ranking.</li>
+      </ul>
+      <p>Use our <a href="/tools/image-resizer">Image Resizer</a> and Compressor to ensure your media meets the strict requirements of modern SEO.</p>
+    `,
+    date: "Jan 22, 2024",
+    category: "SEO",
+    author: "Admin"
   }
 ];

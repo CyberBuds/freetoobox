@@ -111,30 +111,57 @@ export default function Home() {
         <AdPlaceholder className="h-32" label="Middle Content Ad" />
       </div>
 
-      {/* Features Section */}
+      {/* Why Choose Us Section */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Why Use FreeToolsBox.in?</h2>
+            <p className="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
+              Our mission is to provide high-quality, professional utilities for everyone without the need for expensive subscriptions or account registration. Here is why thousands of users trust us every day.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-50 text-green-600">
                 <Zap className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Lightning Fast</h3>
-              <p className="text-gray-500">All tools are optimized for speed, ensuring you get results in milliseconds.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Lightning Fast & Reliable</h3>
+              <p className="text-gray-500">All tools are optimized for speed, ensuring you get results in milliseconds. We use modern web technologies to process data instantly.</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
                 <Shield className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Secure & Private</h3>
-              <p className="text-gray-500">Your data never leaves your browser. We process everything locally for maximum privacy.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">100% Secure & Private</h3>
+              <p className="text-gray-500">Your data never leaves your browser. We process everything locally (client-side) for maximum privacy. We don't store your sensitive information.</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-50 text-purple-600">
                 <Smartphone className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Mobile Ready</h3>
-              <p className="text-gray-500">Fully responsive design that works perfectly on your phone, tablet, or desktop.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Completely Free, Always</h3>
+              <p className="text-gray-500">No hidden costs, no premium tiers, and no registration required. Every tool is accessible to everyone at FreeToolsBox.in.</p>
+            </div>
+          </div>
+
+          <div className="mt-20 border-t border-gray-100 pt-16">
+            <div className="prose prose-blue max-w-none text-gray-600">
+              <h3 className="text-2xl font-bold text-gray-900">Your Multi-Purpose Digital Toolkit</h3>
+              <p>
+                In today's digital landscape, the need for quick, reliable, and secure tools is greater than ever. Whether you're a business owner calculating GST, a student managing PDF assignments, or a developer optimizing images for the web, <strong>FreeToolsBox.in</strong> is your one-stop destination.
+              </p>
+              <p>
+                We categorized our tools into distinct groups to help you find exactly what you need:
+              </p>
+              <ul>
+                <li><strong>Financial Calculators:</strong> From EMI and SIP calculators to complex GST and Profit-Loss tools, we help you make informed financial decisions.</li>
+                <li><strong>PDF Management:</strong> Merge, split, compress, and convert PDF documents directly in your browser without software installations.</li>
+                <li><strong>Image Optimization:</strong> Resize and compress images to improve your website's performance and SEO ranking.</li>
+                <li><strong>Professional Utilities:</strong> Word counters, percentage calculators, and more to streamline your daily tasks.</li>
+              </ul>
+              <p>
+                Our commitment to user experience means no annoying pop-ups, no tracking, and a clean, ad-friendly interface that prioritizes your workflow.
+              </p>
             </div>
           </div>
         </div>

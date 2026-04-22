@@ -67,30 +67,64 @@ export default function ImageCompressor() {
   return (
     <ToolPageLayout
       toolId="image-compressor"
-      title="Image Compressor"
-      description="Reduce image file size instantly without losing visible quality."
+      title="Online Image Compressor"
+      description="Reduce image file size instantly without compromising visual quality. 100% secure, browser-based compression."
       category="Image Tools"
       seoContent={
-        <>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Why Compress Your Images?</h2>
-          <p className="text-gray-600 mb-4">
-            In today's fast-paced digital world, website speed is more important than ever. Large image files are often the primary reason for slow-loading pages. By compressing your images, you can significantly reduce their file size while maintaining a high level of visual quality.
-          </p>
-          
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits of Image Compression</h3>
-          <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
-            <li><strong>Improved SEO:</strong> Search engines like Google consider page load speed as a ranking factor. Faster sites rank higher.</li>
-            <li><strong>Better User Experience:</strong> Users are less likely to leave a site that loads quickly.</li>
-          </ul>
+        <div className="space-y-8">
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Importance of Image Compression in 2026</h2>
+            <p className="text-gray-600 mb-4">
+              In a digital landscape where attention spans are measured in seconds, page load speed is the difference between a bounce and a conversion. High-resolution images, while beautiful, are often the primary cause of slow loading times. Our <strong>Online Image Compressor</strong> allows you to strike the perfect balance between crisp visuals and lightning-fast performance.
+            </p>
+            <p className="text-gray-600">
+              Whether you're a web developer aiming for a perfect 100 on Google PageSpeed Insights, a photographer sharing galleries on social media, or a student uploading assignments, we provide the tools you need to optimize your media effortlessly.
+            </p>
+          </section>
 
-          <h3 className="text-xl font-bold text-gray-900 mb-2">How our Image Compressor works</h3>
-          <p className="text-gray-600 mb-4">
-            Our tool uses "Lossy Compression" for JPEG images. This technique works by removing some of the data that the human eye is less likely to notice. By adjusting the quality slider, you can find the perfect balance between file size and image clarity.
-          </p>
-          <p className="text-gray-600 mb-4">
-            <strong>Privacy First:</strong> Unlike other online tools, our compressor works entirely within your browser. Your images are never uploaded to any server. This means your private photos stay private, and the process is incredibly fast since there's no upload or download time involved.
-          </p>
-        </>
+          <section className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Lossy vs. Lossless Compression</h3>
+            <p className="text-gray-600 mb-4">Understanding how your images are being processed helps you choose the right quality setting:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-blue-600">Lossy Compression</h4>
+                <p className="text-sm text-gray-500 italic">Used for JPEGs & WebP</p>
+                <p className="text-xs text-gray-600 mt-2">Removes "unnoticeable" color data to achieve 70-90% reduction in file size. Ideal for web graphics and photos.</p>
+              </div>
+              <div className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-blue-600">Lossless Compression</h4>
+                <p className="text-sm text-gray-500 italic">Used for PNGs</p>
+                <p className="text-xs text-gray-600 mt-2">Removes redundant metadata and internal coding inefficiencies. Zero quality loss, but results in smaller size reductions (10-30%).</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">How Compression Benefits Your SEO</h3>
+            <ul className="list-disc pl-6 text-gray-600 space-y-3">
+              <li><strong>Core Web Vitals:</strong> Faster images improve your <strong>Largest Contentful Paint (LCP)</strong>, a critical metric in Google's ranking algorithm.</li>
+              <li><strong>Mobile Friendliness:</strong> Smaller images load faster on 3G/4G networks, providing a better experience for the billions of mobile users.</li>
+              <li><strong>Reduced Server Load:</strong> If you're a developer, optimized images consume less bandwidth and storage, lowering your infrastructure costs.</li>
+            </ul>
+          </section>
+
+          <section className="bg-green-50 p-6 rounded-xl border border-green-100">
+            <h3 className="text-lg font-bold text-green-900 mb-2">Maximum Privacy Guaranteed</h3>
+            <p className="text-green-800">
+              Unlike many "free" online compressors, <strong>FreeToolsBox.in</strong> uses a strictly client-side architecture. This means your images are processed within your browser's memory using standard JavaScript APIs. They are never transmitted to our servers and are destroyed as soon as you close your browser tab. Your privacy isn't just a promise; it's hard-coded into our tools.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Recommended Quality Settings</h3>
+            <p className="text-gray-600 mb-4">Finding the "Sweet Spot" for your images:</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
+              <li className="p-2 border border-gray-100 rounded bg-gray-50"><strong>80-90%:</strong> High quality, best for hero images and product photos.</li>
+              <li className="p-2 border border-gray-100 rounded bg-gray-50"><strong>60-70%:</strong> Standard web quality, great for blog posts.</li>
+              <li className="p-2 border border-gray-100 rounded bg-gray-50"><strong>Below 50%:</strong> Maximum compression, best for thumbnails.</li>
+            </ul>
+          </section>
+        </div>
       }
     >
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
