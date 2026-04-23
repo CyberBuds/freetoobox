@@ -4,13 +4,13 @@ import ToolPageLayout from '@/components/ToolPageLayout';
 
 export default function MetaTagGenerator() {
   const [data, setData] = useState({
-    title: '',
-    description: '',
-    keywords: '',
-    author: '',
+    title: 'FreeToolsBox - 100% Free Online Tools',
+    description: 'Professional-grade calculators, SEO tools, and image utilities.',
+    keywords: 'free tools, seo, calculator',
+    author: 'FreeToolsBox',
     type: 'website',
-    url: '',
-    image: '',
+    url: 'https://www.freetoolsbox.in',
+    image: 'https://www.freetoolsbox.in/og-image.png',
   });
   const [copied, setCopied] = useState(false);
 
