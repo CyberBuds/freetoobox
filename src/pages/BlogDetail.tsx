@@ -48,6 +48,15 @@ export default function BlogDetail() {
           </p>
         </header>
 
+        <div className="mb-12 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 aspect-[21/9]">
+          <img 
+            src={post.image} 
+            alt={post.title}
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
         <AdPlaceholder className="h-24 mb-12" label="Top Banner Ad" />
 
         <div 
@@ -62,11 +71,21 @@ export default function BlogDetail() {
         <h3 className="text-lg font-bold text-gray-900 mb-6">Related Posts</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {BLOG_POSTS.filter(p => p.id !== post.id).slice(0, 2).map(related => (
-            <Link key={related.id} to={`/blog/${related.id}`} className="group">
-              <h4 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
-                {related.title}
-              </h4>
-              <p className="text-sm text-gray-500 line-clamp-2">{related.excerpt}</p>
+            <Link key={related.id} to={`/blog/${related.id}`} className="group flex gap-4">
+              <div className="w-20 h-20 rounded-xl overflow-hidden shadow-sm shrink-0">
+                <img 
+                  src={related.image} 
+                  alt={related.title}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">
+                  {related.title}
+                </h4>
+                <p className="text-sm text-gray-500 line-clamp-2">{related.excerpt}</p>
+              </div>
             </Link>
           ))}
         </div>

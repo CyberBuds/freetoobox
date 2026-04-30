@@ -3,7 +3,7 @@ import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp } from 'lucide-
 import { motion } from 'motion/react';
 import ToolCard from '@/components/ToolCard';
 import AdPlaceholder from '@/components/AdPlaceholder';
-import { TOOLS, CATEGORIES } from '@/constants';
+import { TOOLS, CATEGORIES, BLOG_POSTS } from '@/constants';
 import { useState } from 'react';
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-16 pb-16">
+    <div className="flex flex-col gap-10 sm:gap-16 pb-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-20 pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -120,20 +120,20 @@ export default function Home() {
 
       {/* Popular Tools Section - Bento Grid Style */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider">Top Rated</span>
             </div>
-            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Popular Tools</h2>
-            <p className="mt-2 text-gray-500 max-w-lg">Hand-picked by our community for their reliability and ease of use.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Popular Tools</h2>
+            <p className="mt-2 text-gray-500 max-w-lg text-sm sm:text-base">Hand-picked by our community for their reliability and ease of use.</p>
           </div>
-          <Link to="/tools" className="hidden sm:flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all">
+          <Link to="/tools" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all">
             View all tools <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
           {/* Tool 1 - Large Featured */}
           <div className="md:col-span-2 lg:col-span-3 row-span-2">
             <ToolCard 
@@ -163,26 +163,26 @@ export default function Home() {
       </section>
 
       {/* Trending / Viral Tools Section */}
-      <section className="bg-gray-900 py-24 -mx-4 px-4 sm:mx-0 sm:px-8 sm:rounded-[3rem] relative overflow-hidden">
+      <section className="bg-gray-900 py-16 sm:py-24 sm:mx-4 lg:mx-8 sm:rounded-[3rem] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-500/10 rounded-full blur-[80px]"></div>
         
-        <div className="mx-auto max-w-7xl relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <TrendingUp className="h-5 w-5 text-blue-400" />
-                <span className="text-blue-400 text-xs font-bold uppercase tracking-[0.2em]">Live Trends</span>
+                <span className="text-blue-400 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em]">Live Trends</span>
               </div>
-              <h2 className="text-4xl font-bold text-white tracking-tight">Viral & Trending</h2>
-              <p className="mt-3 text-gray-400 max-w-md">What everyone is using right now across social media and creative projects.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">Viral & Trending</h2>
+              <p className="mt-3 text-gray-400 max-w-md text-sm sm:text-base leading-relaxed">What everyone is using right now across social media and creative projects.</p>
             </div>
-            <Link to="/tools?category=social-media" className="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-2xl font-bold hover:bg-white/20 transition-all">
+            <Link to="/tools?category=social-media" className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-6 py-3 rounded-2xl font-bold hover:bg-white/20 transition-all text-sm sm:text-base">
               See more <Zap className="h-4 w-4 text-yellow-400" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               'instagram-font-generator',
               'youtube-thumbnail-downloader',
@@ -194,13 +194,13 @@ export default function Home() {
                 <Link 
                   key={id}
                   to={tool.href}
-                  className="group relative bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500"
+                  className="group relative bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500"
                 >
-                  <div className="mb-6 p-4 rounded-2xl bg-white/5 text-blue-400 group-hover:scale-110 transition-transform duration-500 inline-block">
+                  <div className="mb-4 sm:mb-6 p-4 rounded-2xl bg-white/5 text-blue-400 group-hover:scale-110 transition-transform duration-500 inline-block">
                     <tool.icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{tool.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{tool.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{tool.title}</h3>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{tool.description}</p>
                 </Link>
               );
             })}
@@ -210,14 +210,14 @@ export default function Home() {
 
       {/* Recently Added Tools */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Recently Added</h2>
-            <p className="mt-2 text-gray-500">Fresh tools added to our collection this week.</p>
+            <p className="mt-2 text-gray-500 text-sm sm:text-base">Fresh tools added to our collection this week.</p>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             'sql-formatter',
             'regex-tester',
@@ -253,12 +253,52 @@ export default function Home() {
         <AdPlaceholder className="h-32" label="Middle Content Ad" />
       </div>
 
+      {/* Latest from the Blog */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Blog & Guides</h2>
+            <p className="mt-2 text-gray-500 max-w-lg text-sm sm:text-base">Expert tips on how to get the most out of our tools.</p>
+          </div>
+          <Link to="/blog" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all">
+            Visit our blog <ArrowRight className="h-5 w-5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {BLOG_POSTS.slice(0, 3).map((post) => (
+            <Link key={post.id} to={`/blog/${post.id}`} className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all">
+              <div className="aspect-[16/9] overflow-hidden">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider px-2 py-1 bg-blue-50 rounded-lg">{post.category}</span>
+                  <span className="text-xs text-gray-400">{post.date}</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">{post.title}</h3>
+                <p className="text-gray-500 text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
+                <div className="mt-auto flex items-center text-blue-600 text-sm font-bold group-hover:underline">
+                  Read More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Why Use FreeToolsBox.in?</h2>
-            <p className="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl px-2">Why Use FreeToolsBox.in?</h2>
+            <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-3xl mx-auto px-4">
               Our mission is to provide high-quality, professional utilities for everyone without the need for expensive subscriptions or account registration. Here is why thousands of users trust us every day.
             </p>
           </div>

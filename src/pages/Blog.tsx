@@ -13,25 +13,35 @@ export default function Blog() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-12">
           {BLOG_POSTS.map((post) => (
-            <Link key={post.id} to={`/blog/${post.id}`} className="group block">
-              <article>
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-gray-400">{post.date}</span>
+            <Link key={post.id} to={`/blog/${post.id}`} className="group block mb-12 last:mb-0">
+              <article className="flex flex-col md:flex-row gap-6">
+                <div className="w-full md:w-1/3 aspect-[16/9] md:aspect-square rounded-2xl overflow-hidden shadow-lg border border-gray-100 shrink-0">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-4">
-                  {post.title}
-                </h2>
-                <p className="text-gray-500 leading-relaxed mb-6">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center text-blue-600 font-semibold group-hover:underline">
-                  Read More
-                  <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
+                      {post.category}
+                    </span>
+                    <span className="text-sm text-gray-400">{post.date}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center text-blue-600 font-bold group-hover:gap-2 transition-all">
+                    Read Full Story
+                    <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </article>
             </Link>

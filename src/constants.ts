@@ -492,6 +492,7 @@ export const BLOG_POSTS = [
   {
     id: 'optimize-website-images',
     title: "How to Optimize Your Website Images for Better Performance",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60",
     excerpt: "Learn the best practices for image compression and how it can significantly improve your site's loading speed and SEO ranking.",
     content: `
       <p>In today's fast-paced digital world, website performance is more critical than ever. One of the most significant factors affecting page load speed is the size of your images. Large, unoptimized images can slow down your site, leading to a poor user experience and lower search engine rankings.</p>
@@ -516,6 +517,7 @@ export const BLOG_POSTS = [
   {
     id: 'understanding-gst',
     title: "Understanding GST: A Comprehensive Guide for Indian Businesses",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=60",
     excerpt: "Everything you need to know about Goods and Services Tax in India, from registration to filing returns and calculating tax correctly.",
     content: `
       <p>Goods and Services Tax (GST) has revolutionized the indirect tax structure in India. For businesses, understanding the nuances of GST is essential for compliance and smooth operations.</p>
@@ -540,6 +542,7 @@ export const BLOG_POSTS = [
   {
     id: 'top-10-seo-tools',
     title: "Top 10 SEO Tools Every Content Creator Should Use",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c20a?w=800&auto=format&fit=crop&q=60",
     excerpt: "Boost your search engine visibility with these essential free tools designed to help you rank higher and reach more people.",
     content: `
       <p>Search Engine Optimization (SEO) is the key to getting your content seen by the right audience. While there are many paid tools available, there are also several powerful free tools that can help you optimize your content.</p>
@@ -561,6 +564,7 @@ export const BLOG_POSTS = [
   {
     id: 'managing-pdf-documents',
     title: "The Ultimate Guide to Managing PDF Documents Efficiently",
+    image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&auto=format&fit=crop&q=60",
     excerpt: "Discover how to merge, split, and compress PDF files to streamline your workflow and save storage space.",
     content: `
       <p>PDFs are the standard for document sharing, but they can be tricky to manage without the right tools. Whether you're a student, a professional, or a business owner, knowing how to handle PDFs efficiently can save you hours of work.</p>
@@ -585,6 +589,7 @@ export const BLOG_POSTS = [
   {
     id: 'sip-investment-benefits',
     title: "Why You Should Use a SIP Calculator for Your Investments",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=60",
     excerpt: "Learn how Systematic Investment Plans (SIP) can help you build wealth over time and how to project your returns accurately.",
     content: `
       <p>Investing in the stock market or mutual funds can be intimidating. However, Systematic Investment Plans (SIPs) offer a disciplined way to invest small amounts regularly, making wealth creation accessible to everyone.</p>
@@ -604,6 +609,7 @@ export const BLOG_POSTS = [
   {
     id: 'bmi-health-tracking',
     title: "The Importance of BMI in Tracking Your Health Journey",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=60",
     excerpt: "Understand what Body Mass Index (BMI) is, why it matters, and how to use it as a starting point for a healthier lifestyle.",
     content: `
       <p>Body Mass Index (BMI) is a simple calculation using a person's height and weight. While it doesn't measure body fat directly, it is a reliable indicator of body fatness for most people.</p>
@@ -623,6 +629,7 @@ export const BLOG_POSTS = [
   {
     id: 'word-to-pdf-formatting',
     title: "How to Convert Word to PDF Without Losing Formatting",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=60",
     excerpt: "A step-by-step guide to ensuring your documents look exactly the same after conversion, regardless of the device they are viewed on.",
     content: `
       <p>We've all been there: you spend hours perfecting a Word document, only for the fonts and layout to break when someone else opens it. Converting to PDF is the best way to preserve your hard work.</p>
@@ -646,6 +653,7 @@ export const BLOG_POSTS = [
   {
     id: 'loan-tenure-optimization',
     title: "Understanding Loan Tenure: How Shorter Loans Save Thousands",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop&q=60",
     excerpt: "Explore the impact of loan duration on your total interest and learn why 'shorter is better' when it comes to long-term debt.",
     content: `
       <p>When taking a loan, most borrowers focus solely on the monthly EMI. While a lower EMI is easier on the wallet today, it often comes at a massive cost in the long run due to extended tenures.</p>
@@ -661,6 +669,7 @@ export const BLOG_POSTS = [
   {
     id: 'the-science-of-age-calculation',
     title: "The Science of Age Calculation: More than Just Years",
+    image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&auto=format&fit=crop&q=60",
     excerpt: "Discover the complexity behind leap years, cultural age differences, and how our high-precision tools calculate your exact time on Earth.",
     content: `
       <p>Calculating age seems simple until you account for the irregularities of the Gregorian calendar. Leap years happen every four years (mostly), and months vary from 28 to 31 days.</p>
@@ -676,6 +685,7 @@ export const BLOG_POSTS = [
   {
     id: 'image-seo-best-practices',
     title: "Image SEO: Boosting Your Ranking with Optimized Media",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop&q=60",
     excerpt: "Metadata, Alt text, and Compression—learn the three pillars of maximizing your website's search engine visibility through images.",
     content: `
       <p>Google images can drive significant traffic to your site, but only if your media is optimized for their crawlers. SEO isn't just about text; it's about how your images talk to search engines.</p>
