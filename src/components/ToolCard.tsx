@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { LucideIcon } from 'lucide-react';
 import { motion } from 'motion/react';
+import { cn } from '@/lib/utils';
 
 interface ToolCardProps {
   id: string;
@@ -9,15 +9,18 @@ interface ToolCardProps {
   icon: any;
   href: string;
   category: string;
-  [key: string]: any;
+  className?: string;
 }
 
-export default function ToolCard({ title, description, icon: Icon, href, category }: ToolCardProps) {
+export default function ToolCard({ title, description, icon: Icon, href, category, className }: ToolCardProps) {
   return (
-    <Link to={href} className="block">
+    <Link to={href} className="block h-full">
       <motion.div
         whileHover={{ y: -5 }}
-        className="group relative flex flex-col h-full rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:shadow-xl hover:border-blue-200"
+        className={cn(
+          "group relative flex flex-col h-full rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:shadow-xl hover:border-blue-200",
+          className
+        )}
       >
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
           <Icon className="h-6 w-6" />

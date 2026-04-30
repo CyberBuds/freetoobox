@@ -1,4 +1,4 @@
-import { Calculator, Image, FileText, Search, Percent, Clock, Hash, TrendingUp, Landmark, Activity, Wallet, FileCode, FileStack, Scissors, Minimize, Maximize, RefreshCw, Eraser, ShieldCheck } from 'lucide-react';
+import { Calculator, Image, FileText, Search, Percent, Clock, Hash, TrendingUp, Landmark, Activity, Wallet, FileCode, FileStack, Scissors, Minimize, Maximize, RefreshCw, Eraser, ShieldCheck, Instagram, Youtube, Palette, Type, MousePointer2, Database, Fingerprint, Terminal, FileJson, Eye, Code } from 'lucide-react';
 
 export const TOOLS = [
   {
@@ -40,6 +40,14 @@ export const TOOLS = [
     icon: Maximize,
     category: 'Image Tools',
     href: '/tools/image-resizer',
+  },
+  {
+    id: 'meme-generator',
+    title: 'Meme Generator',
+    description: 'Create funny memes instantly with our easy-to-use meme maker.',
+    icon: Image,
+    category: 'Image Tools',
+    href: '/tools/meme-generator',
   },
   {
     id: 'jpg-to-png',
@@ -202,12 +210,68 @@ export const TOOLS = [
     href: '/tools/text-to-slug',
   },
   {
+    id: 'fancy-font-generator',
+    title: 'Fancy Font Generator',
+    description: 'Convert normal text into various cool and fancy fonts for social media.',
+    icon: Type,
+    category: 'Text Tools',
+    href: '/tools/fancy-font-generator',
+  },
+  {
+    id: 'instagram-font-generator',
+    title: 'Instagram Font Generator',
+    description: 'Generate stylish fonts specifically for your Instagram bio and captions.',
+    icon: Instagram,
+    category: 'Social Media',
+    href: '/tools/instagram-font-generator',
+  },
+  {
+    id: 'instagram-bio-generator',
+    title: 'Instagram Bio Generator',
+    description: 'Create catchy and professional Instagram bios with emojis and stylish fonts.',
+    icon: Instagram,
+    category: 'Social Media',
+    href: '/tools/instagram-bio-generator',
+  },
+  {
+    id: 'youtube-thumbnail-downloader',
+    title: 'YT Thumbnail Downloader',
+    description: 'Download high-quality thumbnails from any YouTube video instantly.',
+    icon: Youtube,
+    category: 'Social Media',
+    href: '/tools/youtube-thumbnail-downloader',
+  },
+  {
+    id: 'gradient-generator',
+    title: 'Gradient Generator',
+    description: 'Create beautiful CSS gradients for your next web design project.',
+    icon: Palette,
+    category: 'Design Tools',
+    href: '/tools/gradient-generator',
+  },
+  {
+    id: 'color-palette-generator',
+    title: 'Color Palette Generator',
+    description: 'Generate stunning color schemes and palettes for your designs.',
+    icon: Palette,
+    category: 'Design Tools',
+    href: '/tools/color-palette-generator',
+  },
+  {
     id: 'password-generator',
     title: 'Password Generator',
     description: 'Generate secure, random passwords with custom length and character types.',
     icon: ShieldCheck,
     category: 'Utility Tools',
     href: '/tools/password-generator',
+  },
+  {
+    id: 'typing-speed-test',
+    title: 'Typing Speed Test',
+    description: 'Test your typing speed (WPM) and accuracy with our interactive tool.',
+    icon: MousePointer2,
+    category: 'Utility Tools',
+    href: '/tools/typing-speed-test',
   },
   {
     id: 'keyword-density-checker',
@@ -345,6 +409,70 @@ export const TOOLS = [
     category: 'Finance Tools',
     href: '/tools/land-unit-converter',
   },
+  {
+    id: 'sql-formatter',
+    title: 'SQL Formatter',
+    description: 'Prettify and format your SQL queries for better readability across different dialects.',
+    icon: Database,
+    category: 'Developer Tools',
+    href: '/tools/sql-formatter',
+  },
+  {
+    id: 'regex-tester',
+    title: 'Regex Tester',
+    description: 'Test your regular expressions in real-time with sample text and visualization.',
+    icon: Search,
+    category: 'Developer Tools',
+    href: '/tools/regex-tester',
+  },
+  {
+    id: 'jwt-decoder',
+    title: 'JWT Decoder',
+    description: 'Decode JSON Web Tokens (JWT) to view their header, payload, and signature data.',
+    icon: ShieldCheck,
+    category: 'Developer Tools',
+    href: '/tools/jwt-decoder',
+  },
+  {
+    id: 'uuid-generator',
+    title: 'UUID Generator',
+    description: 'Generate secure, random UUIDs (v4) for your development and database needs.',
+    icon: Fingerprint,
+    category: 'Developer Tools',
+    href: '/tools/uuid-generator',
+  },
+  {
+    id: 'timestamp-converter',
+    title: 'Timestamp Converter',
+    description: 'Convert between Unix timestamps and human-readable dates in various formats.',
+    icon: Clock,
+    category: 'Developer Tools',
+    href: '/tools/timestamp-converter',
+  },
+  {
+    id: 'curl-converter',
+    title: 'CURL Converter',
+    description: 'Convert CURL commands to equivalent code in fetch, axios, or other languages.',
+    icon: Terminal,
+    category: 'Developer Tools',
+    href: '/tools/curl-converter',
+  },
+  {
+    id: 'yaml-formatter',
+    title: 'YAML Formatter',
+    description: 'Prettify, validate, and convert your YAML data to JSON and back.',
+    icon: FileJson,
+    category: 'Developer Tools',
+    href: '/tools/yaml-formatter',
+  },
+  {
+    id: 'markdown-previewer',
+    title: 'Markdown Previewer',
+    description: 'Write Markdown code and preview the rendered output in real-time with styling.',
+    icon: Eye,
+    category: 'Developer Tools',
+    href: '/tools/markdown-previewer',
+  },
 ];
 
 export const CATEGORIES = [
@@ -355,6 +483,8 @@ export const CATEGORIES = [
   { name: 'Developer Tools', icon: FileCode },
   { name: 'Finance Tools', icon: TrendingUp },
   { name: 'SEO Tools', icon: Search },
+  { name: 'Social Media', icon: Instagram },
+  { name: 'Design Tools', icon: Palette },
   { name: 'Utility Tools', icon: Scissors },
 ];
 

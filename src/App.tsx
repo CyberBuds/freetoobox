@@ -62,6 +62,22 @@ import QRCodeGenerator from './pages/tools/QRCodeGenerator';
 import AreaConverter from './pages/tools/AreaConverter';
 import LandUnitConverter from './pages/tools/LandUnitConverter';
 import CurrencyConverter from './pages/tools/CurrencyConverter';
+import FancyFontGenerator from './pages/tools/FancyFontGenerator';
+import InstagramFontGenerator from './pages/tools/InstagramFontGenerator';
+import InstagramBioGenerator from './pages/tools/InstagramBioGenerator';
+import YouTubeThumbnailDownloader from './pages/tools/YouTubeThumbnailDownloader';
+import GradientGenerator from './pages/tools/GradientGenerator';
+import ColorPaletteGenerator from './pages/tools/ColorPaletteGenerator';
+import TypingSpeedTest from './pages/tools/TypingSpeedTest';
+import MemeGenerator from './pages/tools/MemeGenerator';
+import SQLFormatter from './pages/tools/SQLFormatter';
+import RegexTester from './pages/tools/RegexTester';
+import JWTDecoder from './pages/tools/JWTDecoder';
+import UUIDGenerator from './pages/tools/UUIDGenerator';
+import TimestampConverter from './pages/tools/TimestampConverter';
+import CURLConverter from './pages/tools/CURLConverter';
+import YAMLFormatter from './pages/tools/YAMLFormatter';
+import MarkdownPreviewer from './pages/tools/MarkdownPreviewer';
 
 export default function App() {
   return (
@@ -124,6 +140,22 @@ export default function App() {
             <Route path="/tools/area-converter" element={<AreaConverter />} />
             <Route path="/tools/land-unit-converter" element={<LandUnitConverter />} />
             <Route path="/tools/currency-converter" element={<CurrencyConverter />} />
+            <Route path="/tools/fancy-font-generator" element={<FancyFontGenerator />} />
+            <Route path="/tools/instagram-font-generator" element={<InstagramFontGenerator />} />
+            <Route path="/tools/instagram-bio-generator" element={<InstagramBioGenerator />} />
+            <Route path="/tools/youtube-thumbnail-downloader" element={<YouTubeThumbnailDownloader />} />
+            <Route path="/tools/gradient-generator" element={<GradientGenerator />} />
+            <Route path="/tools/color-palette-generator" element={<ColorPaletteGenerator />} />
+            <Route path="/tools/typing-speed-test" element={<TypingSpeedTest />} />
+            <Route path="/tools/meme-generator" element={<MemeGenerator />} />
+            <Route path="/tools/sql-formatter" element={<SQLFormatter />} />
+            <Route path="/tools/regex-tester" element={<RegexTester />} />
+            <Route path="/tools/jwt-decoder" element={<JWTDecoder />} />
+            <Route path="/tools/uuid-generator" element={<UUIDGenerator />} />
+            <Route path="/tools/timestamp-converter" element={<TimestampConverter />} />
+            <Route path="/tools/curl-converter" element={<CURLConverter />} />
+            <Route path="/tools/yaml-formatter" element={<YAMLFormatter />} />
+            <Route path="/tools/markdown-previewer" element={<MarkdownPreviewer />} />
           </Routes>
         </main>
         <Footer />

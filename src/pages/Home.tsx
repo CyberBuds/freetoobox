@@ -1,11 +1,22 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Smartphone } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp } from 'lucide-react';
 import { motion } from 'motion/react';
 import ToolCard from '@/components/ToolCard';
 import AdPlaceholder from '@/components/AdPlaceholder';
 import { TOOLS, CATEGORIES } from '@/constants';
+import { useState } from 'react';
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/tools?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
@@ -27,11 +38,38 @@ export default function Home() {
             >
               Access a suite of professional-grade tools for calculators, image processing, and SEO. Simple, fast, and completely free.
             </motion.p>
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mt-10 flex items-center justify-center gap-x-6"
+              className="mx-auto mt-10 max-w-xl"
+            >
+              <form onSubmit={handleSearch} className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                  <Search className="h-6 w-6 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="What tool are you looking for? (e.g., PDF, Calculator)"
+                  className="block w-full pl-14 pr-4 py-5 text-lg rounded-2xl border-2 border-gray-100 focus:border-blue-500 outline-none shadow-xl shadow-blue-500/5 transition-all bg-gray-50/50"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
+                >
+                  Search
+                </button>
+              </form>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mt-8 flex items-center justify-center gap-x-6"
             >
               <Link
                 to="/tools"
@@ -80,29 +118,133 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Tools Section */}
+      {/* Popular Tools Section - Bento Grid Style */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">Popular Tools</h2>
-            <p className="mt-2 text-gray-500">Our most used tools by the community</p>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider">Top Rated</span>
+            </div>
+            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Popular Tools</h2>
+            <p className="mt-2 text-gray-500 max-w-lg">Hand-picked by our community for their reliability and ease of use.</p>
           </div>
-          <Link to="/tools" className="hidden sm:flex items-center gap-1 text-blue-600 font-semibold hover:underline">
-            View all tools <ArrowRight className="h-4 w-4" />
+          <Link to="/tools" className="hidden sm:flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all">
+            View all tools <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TOOLS.map((tool) => (
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {/* Tool 1 - Large Featured */}
+          <div className="md:col-span-2 lg:col-span-3 row-span-2">
             <ToolCard 
-              key={tool.id}
-              id={tool.id}
-              title={tool.title}
-              description={tool.description}
-              icon={tool.icon}
-              href={tool.href}
-              category={tool.category}
+              {...TOOLS.find(t => t.id === 'gst-calculator')!} 
+              className="h-full border-2 border-blue-100/50 shadow-blue-500/10 hover:border-blue-500/50"
             />
-          ))}
+          </div>
+          {/* Tool 2 */}
+          <div className="md:col-span-2 lg:col-span-3">
+            <ToolCard {...TOOLS.find(t => t.id === 'emi-calculator')!} />
+          </div>
+          {/* Tool 3 */}
+          <div className="md:col-span-2 lg:col-span-3">
+            <ToolCard {...TOOLS.find(t => t.id === 'image-compressor')!} />
+          </div>
+          {/* Smaller ones */}
+          <div className="md:col-span-2 lg:col-span-2">
+            <ToolCard {...TOOLS.find(t => t.id === 'word-counter')!} />
+          </div>
+          <div className="md:col-span-2 lg:col-span-2">
+            <ToolCard {...TOOLS.find(t => t.id === 'pdf-to-word')!} />
+          </div>
+          <div className="md:col-span-2 lg:col-span-2">
+            <ToolCard {...TOOLS.find(t => t.id === 'merge-pdf')!} />
+          </div>
+        </div>
+      </section>
+
+      {/* Trending / Viral Tools Section */}
+      <section className="bg-gray-900 py-24 -mx-4 px-4 sm:mx-0 sm:px-8 sm:rounded-[3rem] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-500/10 rounded-full blur-[80px]"></div>
+        
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <TrendingUp className="h-5 w-5 text-blue-400" />
+                <span className="text-blue-400 text-xs font-bold uppercase tracking-[0.2em]">Live Trends</span>
+              </div>
+              <h2 className="text-4xl font-bold text-white tracking-tight">Viral & Trending</h2>
+              <p className="mt-3 text-gray-400 max-w-md">What everyone is using right now across social media and creative projects.</p>
+            </div>
+            <Link to="/tools?category=social-media" className="inline-flex items-center gap-2 bg-white/10 text-white px-6 py-3 rounded-2xl font-bold hover:bg-white/20 transition-all">
+              See more <Zap className="h-4 w-4 text-yellow-400" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              'instagram-font-generator',
+              'youtube-thumbnail-downloader',
+              'meme-generator',
+              'qr-code-generator'
+            ].map((id) => {
+              const tool = TOOLS.find(t => t.id === id)!;
+              return (
+                <Link 
+                  key={id}
+                  to={tool.href}
+                  className="group relative bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500"
+                >
+                  <div className="mb-6 p-4 rounded-2xl bg-white/5 text-blue-400 group-hover:scale-110 transition-transform duration-500 inline-block">
+                    <tool.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{tool.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{tool.description}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Recently Added Tools */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Recently Added</h2>
+            <p className="mt-2 text-gray-500">Fresh tools added to our collection this week.</p>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            'sql-formatter',
+            'regex-tester',
+            'jwt-decoder',
+            'uuid-generator',
+            'timestamp-converter',
+            'curl-converter',
+            'yaml-formatter',
+            'markdown-previewer'
+          ].slice(0, 4).map((id) => {
+            const tool = TOOLS.find(t => t.id === id)!;
+            return (
+              <Link 
+                key={id}
+                to={tool.href}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-gray-50 text-gray-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
+                  <tool.icon className="h-6 w-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-gray-900 truncate">{tool.title}</h3>
+                  <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">New Tool</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

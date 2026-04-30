@@ -10,7 +10,7 @@ export default function MetaTagGenerator() {
     author: 'FreeToolsBox',
     type: 'website',
     url: 'https://www.freetoolsbox.in',
-    image: 'https://www.freetoolsbox.in/og-image.png',
+    image: 'https://www.freetoolsbox.in/og-image.jpg',
   });
   const [copied, setCopied] = useState(false);
 
