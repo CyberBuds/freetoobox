@@ -17,6 +17,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import DownloadApp from './pages/DownloadApp';
 
 // Tool Pages
 import GSTCalculator from './pages/tools/GSTCalculator';
@@ -95,6 +96,7 @@ export default function App() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/download-app" element={<DownloadApp />} />
             
             {/* Tools */}
             <Route path="/tools/gst-calculator" element={<GSTCalculator />} />

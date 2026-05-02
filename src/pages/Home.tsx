@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp, Download, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import ToolCard from '@/components/ToolCard';
 import AdPlaceholder from '@/components/AdPlaceholder';
@@ -290,6 +290,38 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* App Download CTA */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3rem] p-8 sm:p-16 text-center relative overflow-hidden group shadow-2xl shadow-blue-500/20">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-32 translate-x-32 group-hover:bg-white/20 transition-all duration-700"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl translate-y-32 -translate-x-32 group-hover:bg-indigo-500/30 transition-all duration-700"></div>
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider mb-6">
+              <Download className="h-4 w-4" />
+              Available for Android
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 tracking-tight">Get the FreeToolsBox App</h2>
+            <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+              Experience our tools with native performance, offline support, and system integration. 
+              The ultimate toolkit for your Android device, 100% free.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                to="/download-app"
+                className="bg-white text-blue-600 px-10 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all hover:scale-105 active:scale-95 shadow-xl"
+              >
+                Download Now
+              </Link>
+              <div className="flex items-center gap-2 text-white/80 text-sm">
+                <CheckCircle2 className="h-5 w-5 text-blue-300" />
+                No registration required
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

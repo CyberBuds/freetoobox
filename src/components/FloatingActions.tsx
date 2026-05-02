@@ -11,7 +11,8 @@ interface Message {
   links?: { title: string; href: string }[];
 }
 
-const KEYWORD_MAP: { keywords: string[]; toolIds: string[] }[] = [
+const KEYWORD_MAP: { keywords: string[]; toolIds: string[]; specialHref?: { title: string; href: string } }[] = [
+  { keywords: ['app', 'android', 'apk', 'download', 'mobile'], toolIds: [], specialHref: { title: 'Download Android App', href: '/download-app' } },
   { keywords: ['gst', 'tax', 'goods'], toolIds: ['gst-calculator'] },
   { keywords: ['emi', 'loan', 'mortgage', 'repayment'], toolIds: ['emi-calculator', 'loan-calculator'] },
   { keywords: ['age', 'dob', 'birthday', 'calculate age'], toolIds: ['age-calculator'] },
@@ -84,10 +85,14 @@ export default function FloatingActions() {
     setTimeout(() => {
       const lowerText = text.toLowerCase();
       let matchedToolIds: string[] = [];
+      let specialLinks: { title: string; href: string }[] = [];
 
       for (const entry of KEYWORD_MAP) {
         if (entry.keywords.some(k => lowerText.includes(k))) {
           matchedToolIds = [...matchedToolIds, ...entry.toolIds];
+          if (entry.specialHref) {
+            specialLinks.push(entry.specialHref);
+          }
         }
       }
 
@@ -95,13 +100,14 @@ export default function FloatingActions() {
       matchedToolIds = Array.from(new Set(matchedToolIds));
 
       const matchedTools = TOOLS.filter(t => matchedToolIds.includes(t.id));
+      const finalLinks = [...specialLinks, ...matchedTools.map(t => ({ title: t.title, href: t.href }))];
 
-      if (matchedTools.length > 0) {
+      if (finalLinks.length > 0) {
         const botMsg: Message = {
           id: (Date.now() + 1).toString(),
-          text: `I found ${matchedTools.length} tool(s) that might help you:`,
+          text: `I found ${finalLinks.length} result(s) for you:`,
           sender: 'bot',
-          links: matchedTools.map(t => ({ title: t.title, href: t.href }))
+          links: finalLinks
         };
         setMessages(prev => [...prev, botMsg]);
       } else {
@@ -115,7 +121,7 @@ export default function FloatingActions() {
     }, 600);
   };
 
-  const suggestions = ['GST Calculator', 'EMI Calculator', 'PDF Tools', 'Image Compressor', 'Age Calculator', 'BMI Calculator', 'SIP Calculator'];
+  const suggestions = ['Download App', 'GST Calculator', 'EMI Calculator', 'PDF Tools', 'Image Compressor', 'Age Calculator'];
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-none">

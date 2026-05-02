@@ -21,6 +21,12 @@ export default function Navbar() {
               <Link to="/" className="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Home</Link>
               <Link to="/tools" className="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Tools</Link>
               <Link to="/blog" className="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Blog</Link>
+              <Link 
+                to="/download-app" 
+                className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 text-sm"
+              >
+                Download App
+              </Link>
             </div>
           </div>
 
@@ -41,6 +47,7 @@ export default function Navbar() {
             <Link to="/" className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600">Home</Link>
             <Link to="/tools" className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600">Tools</Link>
             <Link to="/blog" className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600">Blog</Link>
+            <Link to="/download-app" className="block rounded-md px-3 py-2 text-base font-bold text-blue-600 hover:bg-blue-50">Download App</Link>
           </div>
         </div>
       )}
