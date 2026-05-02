@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp, Download, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Smartphone, Search, TrendingUp, Download, CheckCircle2, Calculator, FileText, Image as ImageIcon, Wrench } from 'lucide-react';
 import { motion } from 'motion/react';
 import ToolCard from '@/components/ToolCard';
 import AdPlaceholder from '@/components/AdPlaceholder';
@@ -358,24 +358,56 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-20 border-t border-gray-100 pt-16">
-            <div className="prose prose-blue max-w-none text-gray-600">
-              <h3 className="text-2xl font-bold text-gray-900">Your Multi-Purpose Digital Toolkit</h3>
-              <p>
-                In today's digital landscape, the need for quick, reliable, and secure tools is greater than ever. Whether you're a business owner calculating GST, a student managing PDF assignments, or a developer optimizing images for the web, <strong>FreeToolsBox.in</strong> is your one-stop destination.
-              </p>
-              <p>
-                We categorized our tools into distinct groups to help you find exactly what you need:
-              </p>
-              <ul>
-                <li><strong>Financial Calculators:</strong> From EMI and SIP calculators to complex GST and Profit-Loss tools, we help you make informed financial decisions.</li>
-                <li><strong>PDF Management:</strong> Merge, split, compress, and convert PDF documents directly in your browser without software installations.</li>
-                <li><strong>Image Optimization:</strong> Resize and compress images to improve your website's performance and SEO ranking.</li>
-                <li><strong>Professional Utilities:</strong> Word counters, percentage calculators, and more to streamline your daily tasks.</li>
-              </ul>
-              <p>
-                Our commitment to user experience means no annoying pop-ups, no tracking, and a clean, ad-friendly interface that prioritizes your workflow.
-              </p>
+          <div className="mt-24 bg-blue-50/50 rounded-[3rem] p-8 sm:p-16 border border-blue-100">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-black text-gray-900 mb-4 tracking-tight">Your Multi-Purpose Digital Toolkit</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  In today's digital landscape, the need for quick, reliable, and secure tools is greater than ever. Whether you're a business owner calculating GST, a student managing PDF assignments, or a developer optimizing images for the web, <span className="text-blue-600 font-bold">FreeToolsBox.in</span> is your one-stop destination.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                {[
+                  {
+                    icon: Calculator,
+                    title: "Financial Calculators",
+                    desc: "From EMI and SIP calculators to complex GST and Profit-Loss tools, we help you make informed financial decisions."
+                  },
+                  {
+                    icon: FileText,
+                    title: "PDF Management",
+                    desc: "Merge, split, compress, and convert PDF documents directly in your browser without software installations."
+                  },
+                  {
+                    icon: ImageIcon,
+                    title: "Image Optimization",
+                    desc: "Resize and compress images to improve your website's performance and SEO ranking."
+                  },
+                  {
+                    icon: Wrench,
+                    title: "Professional Utilities",
+                    desc: "Word counters, percentage calculators, and more to streamline your daily tasks."
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-5 group">
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center shadow-sm border border-blue-100 group-hover:scale-110 transition-transform">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center p-6 bg-white rounded-2xl border border-blue-100/50 shadow-sm">
+                <p className="text-sm font-medium text-gray-600 flex items-center justify-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  Our commitment to user experience means no annoying pop-ups, no tracking, and a clean interface.
+                </p>
+              </div>
             </div>
           </div>
         </div>
