@@ -284,7 +284,7 @@ export const TOOLS = [
   {
     id: 'meta-tag-generator',
     title: 'Meta Tag Generator',
-    description: 'Create SEO-friendly meta tags for your website to improve search engine visibility.',
+    description: 'Create SEO-friendly meta tags for your website to improve search visibility.',
     icon: FileCode,
     category: 'SEO Tools',
     href: '/tools/meta-tag-generator',
