@@ -44,7 +44,7 @@ export const TOOLS = [
   {
     id: 'meme-generator',
     title: 'Meme Generator',
-    description: 'Create funny memes instantly with our easy-to-use meme maker.',
+    description: 'Create funny memes instantly with our easy-to-use meme makers.',
     icon: Image,
     category: 'Image Tools',
     href: '/tools/meme-generator',
