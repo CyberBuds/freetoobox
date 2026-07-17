@@ -1,9 +1,26 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AdPlaceholder from '@/components/AdPlaceholder';
 import SEO from '@/components/SEO';
-import { BLOG_POSTS } from '@/constants';
+import { getBlogs, BlogPost } from '@/lib/blogService';
 
 export default function Blog() {
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    getBlogs().then((data) => {
+      if (active) {
+        setBlogs(data);
+        setLoading(false);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <SEO 
@@ -18,40 +35,64 @@ export default function Blog() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-12">
-          {BLOG_POSTS.map((post) => (
-            <Link key={post.id} to={`/blog/${post.id}`} className="group block mb-12 last:mb-0">
-              <article className="flex flex-col md:flex-row gap-6">
-                <div className="w-full md:w-1/3 aspect-[16/9] md:aspect-square rounded-2xl overflow-hidden shadow-lg border border-gray-100 shrink-0">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
-                      {post.category}
-                    </span>
-                    <span className="text-sm text-gray-400">{post.date}</span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center text-blue-600 font-bold group-hover:gap-2 transition-all">
-                    Read Full Story
-                    <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+          {loading ? (
+            // Polish loading skeleton
+            <div className="space-y-12">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="flex flex-col md:flex-row gap-6 animate-pulse">
+                  <div className="w-full md:w-1/3 aspect-[16/9] md:aspect-square bg-gray-200 rounded-2xl shrink-0"></div>
+                  <div className="flex-1 space-y-4 py-2">
+                    <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+                    <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+                    <div className="space-y-2">
+                      <div className="h-4 bg-gray-200 rounded"></div>
+                      <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                    </div>
                   </div>
                 </div>
-              </article>
-            </Link>
-          ))}
+              ))}
+            </div>
+          ) : blogs.length === 0 ? (
+            <div className="text-center py-16">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">No Posts Found</h3>
+              <p className="text-gray-500">We couldn't find any blog posts at this moment. Check back soon!</p>
+            </div>
+          ) : (
+            blogs.map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`} className="group block mb-12 last:mb-0">
+                <article className="flex flex-col md:flex-row gap-6">
+                  <div className="w-full md:w-1/3 aspect-[16/9] md:aspect-square rounded-2xl overflow-hidden shadow-lg border border-gray-100 shrink-0">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-3">
+                      <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-sm text-gray-400">{post.date}</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3 leading-tight">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-blue-600 font-bold group-hover:gap-2 transition-all">
+                      Read Full Story
+                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))
+          )}
         </div>
 
         <aside className="space-y-8">
