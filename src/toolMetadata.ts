@@ -15,11 +15,11 @@ export const TOOL_METADATA: Record<string, { faqs: FAQ[] }> = {
         answer: "The Indian government has categorized goods and services into four primary tax slabs: 5%, 12%, 18%, and 28%. Some essential items like unbranded food grains are exempted (0%), while certain luxury items attract an additional cess."
       },
       {
-        question: "How do I calculate GST Inclusive vs. Exclusive ?",
+        question: "How do I calculate GST Inclusive vs. Exclusive?",
         answer: "For Exclusive: GST Amount = (Original Price * GST Rate) / 100. For Inclusive: GST Amount = Price - (Price * (100 / (100 + GST Rate))). Our calculator handles both methods instantly."
       },
       {
-        question: "What is the difference between CGST, SGST, and IGST ?",
+        question: "What is the difference between CGST, SGST, and IGST?",
         answer: "CGST and SGST are collected for intra-state transactions (within the same state) and are shared between Central and State governments. IGST is collected for inter-state transactions and is collected by the Center."
       },
       {
