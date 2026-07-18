@@ -101,10 +101,33 @@ export function mapApiPostToLocal(post: any): BlogPost {
   };
 }
 
+// Helper to construct headers dynamically. Works in both our local Express server and Vercel proxy.
+function getHeaders(extraHeaders: Record<string, string> = {}): HeadersInit {
+  const headers: Record<string, string> = {
+    'TenantId': 'site1', // Default tenant
+    ...extraHeaders
+  };
+
+  // Check for client-side VITE_ environment variables (Vercel / client-side standalone support)
+  const metaEnv = (import.meta as any).env || {};
+  const apiKey = metaEnv.VITE_BLOG_API_KEY;
+  const token = metaEnv.VITE_BLOG_BEARER_TOKEN;
+
+  if (apiKey) {
+    headers['X-API-Key'] = apiKey;
+  } else if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  return headers;
+}
+
 // 1. Fetch list of all blogs
 export async function getBlogs(): Promise<BlogPost[]> {
   try {
-    const res = await fetch('/api/blog-api/api/v1/Blogs');
+    const res = await fetch('/api/blog-api/api/v1/Blogs', {
+      headers: getHeaders()
+    });
     if (!res.ok) {
       throw new Error(`API returned status ${res.status}`);
     }
@@ -132,7 +155,9 @@ export async function getBlogByIdOrSlug(idOrSlug: string): Promise<BlogPost | nu
       endpoint = `/api/blog-api/api/v1/Blogs/slug/${idOrSlug}`;
     }
 
-    const res = await fetch(endpoint);
+    const res = await fetch(endpoint, {
+      headers: getHeaders()
+    });
     if (!res.ok) {
       throw new Error(`API returned status ${res.status}`);
     }
@@ -157,7 +182,9 @@ export async function getComments(blogId: string): Promise<BlogComment[]> {
   }
 
   try {
-    const res = await fetch(`/api/blog-api/api/v1/comments/blog/${blogId}`);
+    const res = await fetch(`/api/blog-api/api/v1/comments/blog/${blogId}`, {
+      headers: getHeaders()
+    });
     if (!res.ok) {
       throw new Error(`API returned status ${res.status}`);
     }
@@ -192,9 +219,9 @@ export async function createComment(comment: {
   try {
     const res = await fetch('/api/blog-api/api/v1/comments', {
       method: 'POST',
-      headers: {
+      headers: getHeaders({
         'Content-Type': 'application/json',
-      },
+      }),
       body: JSON.stringify(comment),
     });
     
